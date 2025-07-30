@@ -1,0 +1,16 @@
+---
+## 共有されるトークンパターン (単語と品詞が一致)
+1. "jumps over the lazy" (長さ: 4 トークン, 品詞: VERB-ADP-DET-ADJ)
+2. "brown fox" (長さ: 2 トークン, 品詞: ADJ-NOUN)
+3. "he runs" (長さ: 2 トークン, 品詞: PRON-VERB)
+4. "is a" (長さ: 2 トークン, 品詞: AUX-DET)
+5. "a success" (長さ: 2 トークン, 品詞: DET-NOUN)
+6. "quickly" (長さ: 1 トークン, 品詞: ADV)
+7. "project" (長さ: 1 トークン, 品詞: NOUN)
+
+---
+## 品詞の不一致 (同じ単語、異なる品詞)
+品詞の不一致がある単語:
+  Text1: "run" の品詞: VERB
+  Text2: "run" の品詞: NOUN
+
