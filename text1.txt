@@ -1,1 +1,7 @@
-The quick brown fox jumps over the lazy dog. He runs quickly. My project is a success. I can run fast. I like to run. This is a big run.
+The quick brown fox jumps over the lazy dog.        
+ He runs quickly.        
+ My project is a success.        
+ I can run fast.        
+ I like to run.        
+ This is a big run.
+In her will, she asked that her money be donated to the church.
