@@ -1,0 +1,41 @@
+---
+## Shared Token Patterns (Text and POS Match)
+---
+1. "that her money be donated to the church" (Length: 8 tokens, POS: SCONJ-PRON-NOUN-AUX-VERB-ADP-DET-NOUN)
+2. "jumps over the lazy" (Length: 4 tokens, POS: VERB-ADP-DET-ADJ)
+3. "run in her will" (Length: 4 tokens, POS: NOUN-ADP-PRON-NOUN)
+4. "brown fox" (Length: 2 tokens, POS: ADJ-NOUN)
+5. "he runs" (Length: 2 tokens, POS: PRON-VERB)
+6. "is a" (Length: 2 tokens, POS: AUX-DET)
+7. "a success" (Length: 2 tokens, POS: DET-NOUN)
+8. "quickly" (Length: 1 tokens, POS: ADV)
+9. "project" (Length: 1 tokens, POS: NOUN)
+
+---
+## POS Discrepancies (Same Word, Different POS)
+---
+Words with POS Discrepancies:
+  Word: "run"
+    Text1 POS: VERB
+    Text2 POS: NOUN
+
+  Word: "to"
+    Text1 POS: PART
+    Text2 POS: ADP
+
+
+---
+## Phrase Pattern Analysis of the Longest Common Pattern
+---
+  Pattern: "her money"
+  Type: Noun Phrase (NP)
+  Description: A noun phrase headed by 'money' ('NOUN') including its modifiers.
+
+  Pattern: "the church"
+  Type: Noun Phrase (NP)
+  Description: A noun phrase headed by 'church' ('NOUN') including its modifiers.
+
+  Pattern: "donated to church"
+  Type: Verb Phrase (VP) - inferred
+  Description: A verb phrase centered around 'donated' ('VERB') possibly including its objects/complements/adjuncts.
+
