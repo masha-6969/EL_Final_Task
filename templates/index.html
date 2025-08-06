@@ -1,48 +1,57 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>テキスト解析ツール</title>
-    <style>
-        body { font-family: sans-serif; margin: 20px; background-color: #f4f4f4; color: #333; }
-        .container { max-width: 800px; margin: auto; background-color: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h1 { text-align: center; color: #0056b3; }
-        .form-group { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; font-weight: bold; }
-        input[type="file"] { border: 1px solid #ccc; padding: 8px; border-radius: 4px; width: calc(100% - 18px); }
-        button { background-color: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; width: 100%; }
-        button:hover { background-color: #0056b3; }
-        textarea { width: 100%; height: 300px; border: 1px solid #ccc; border-radius: 4px; padding: 10px; font-family: monospace; background-color: #e9e9e9; resize: vertical; }
-        .error-message { color: red; text-align: center; margin-bottom: 15px; font-weight: bold; }
-    </style>
+    <meta charset="utf-8">
+    <title>Longest Pattern Analysis App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>テキスト解析ツール</h1>
+    <h1>Longest Pattern Analysis App</h1>
 
-        {% if error_message %}
-            <p class="error-message">{{ error_message }}</p>
-        {% endif %}
-
+    <div class="upload-section">
+        <h2>Upload Text Files</h2>
         <form method="post" enctype="multipart/form-data">
-            <div class="form-group">
-                <label for="file1">入力ファイル1 (text1.txt):</label>
-                <input type="file" id="file1" name="file1" accept=".txt">
+            <div class="file-input-group">
+                <label for="file1">File 1:</label>
+                <input type="file" name="file1" id="file1" required>
             </div>
-            <div class="form-group">
-                <label for="file2">入力ファイル2 (text2.txt):</label>
-                <input type="file" id="file2" name="file2" accept=".txt">
+            <div class="file-input-group">
+                <label for="file2">File 2:</label>
+                <input type="file" name="file2" id="file2" required>
             </div>
-            <button type="submit">解析実行</button>
+            <div style="text-align: center; margin-top: 20px;">
+                <input type="submit" value="Start Analysis">
+            </div>
         </form>
+    </div>
 
-        <hr style="margin: 30px 0;">
+    {% if error_message %}
+        <p class="error">{{ error_message }}</p>
+    {% endif %}
 
-        <h2>解析結果 (out.txt)</h2>
-        <div class="form-group">
-            <textarea readonly>{{ output_content }}</textarea>
+    {% if output_content %}
+    <div style="text-align: center; margin-bottom: 20px;">
+        <p>
+            **File 1:** `{{ filename1 }}` vs **File 2:** `{{ filename2 }}`
+        </p>
+    </div>
+    <div class="result-container">
+        <div class="content-box">
+            <h4>Analysis Result</h4>
+            <pre>{{ output_content }}</pre>
+        </div>
+        
+        <div class="content-box">
+            <h4>Content of File 1</h4>
+            <pre>{{ text1_content }}</pre>
+        </div>
+
+        <div class="content-box">
+            <h4>Content of File 2</h4>
+            <pre>{{ text2_content }}</pre>
         </div>
     </div>
+    {% endif %}
+
 </body>
 </html>
